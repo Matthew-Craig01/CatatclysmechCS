@@ -48,18 +48,24 @@ namespace Player
         private void UpdateWrenchCountDisplay()
         {
             text.text = (maxWrenches - wrenchCount).ToString();
+            if (wrenchCount < 0)
+            {
+                wrenchCount = 0;
+            }
         }
 
         private void ThrowWrenchObject()
         {
             wrenchCount++;
-            Debug.Log($"Wrench thrown. Current count: {wrenchCount}");
 
             GameObject newWrench = Instantiate(wrenchPrefab, transform.position, transform.rotation);
             Wrench wrench = newWrench.GetComponent<Wrench>();
 
-            wrench.direction = Mouse.getDirection();
-            wrench.throwWrench = this;
+            if (wrench != null)
+            {
+                wrench.direction = Mouse.getDirection();
+                wrench.throwWrench = this;
+            }
         }
 
         public void ReduceWrenchCount()
@@ -72,6 +78,11 @@ namespace Player
             yield return new WaitForSeconds(reloadTime);
             wrenchCount--;
             UpdateWrenchCountDisplay();
+        }
+
+        public void Reset()
+        {
+            wrenchCount = 0;
         }
     }
 }

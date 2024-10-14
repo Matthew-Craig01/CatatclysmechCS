@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 
 public class BuyMenuItem : MonoBehaviour, IPointerClickHandler
 {
-    [Header("UI Elements")]
     public Image buildingIcon;
     public Text buildingNameText;
     public Text buildingDescriptionText;

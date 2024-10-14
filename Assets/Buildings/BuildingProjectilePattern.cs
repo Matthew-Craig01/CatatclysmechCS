@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class BuildingProjectilePattern : MonoBehaviour
 {
-     private GameObject projectilePrefab;
-     private Transform firePoint;
-     private Vector2 direction = Vector2.right; // Default direction
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private Vector2 direction = Vector2.right;
 
     public void Init(GameObject prefab, Vector2 direction)
     {

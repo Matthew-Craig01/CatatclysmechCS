@@ -53,16 +53,15 @@ public class RoundController : MonoBehaviour
     private void RoundOver()
     {
         isRoundOver = true;
-        Debug.Log("RoundOver called.");
 
         ClearScreen();
         power.RoundEnd(currentRound);
         health.Reset();
 
         throwWrench.enabled = false;
+        throwWrench.Reset();
 
         Time.timeScale = 0;
-        Debug.Log("Game paused.");
 
         bpm.OpenBuyMenu(OnBuyMenuClosed);
     }
@@ -79,6 +78,7 @@ public class RoundController : MonoBehaviour
         Time.timeScale = 1;
 
         throwWrench.enabled = true;
+        throwWrench.Reset();
 
         isRoundOver = false;
 
@@ -96,7 +96,6 @@ public class RoundController : MonoBehaviour
         {
             w.GetComponent<Wrench>().Delete();
         }
-        Debug.Log("Screen cleared.");
     }
 
     private void NextRound()
@@ -104,7 +103,6 @@ public class RoundController : MonoBehaviour
         Time.timeScale = 1;
         currentRound++;
         roundText.text = "" + currentRound;
-        Debug.Log("Round: " + currentRound);
         int totalEnemies;
         var chicken = EnemyType.T.Chicken;
         var snake = EnemyType.T.Snake;
@@ -124,11 +122,10 @@ public class RoundController : MonoBehaviour
             7 => (100, 0.6f, last),
             8 => (120, 0.5f, last),
             9 => (150, 0.4f, last),
-            var x => (15 * x, 0.3f * (10 / x), last),
+            var x => (15 * x, 0.3f, last),
         };
         enemySpawner.setRemaining(totalEnemies);
         solarPanelSpawner.Spawn();
         enemySpawner.safeTime = safeTime;
-        Debug.Log("NextRound executed.");
     }
 }

@@ -19,7 +19,10 @@ public class BuyMenu : MonoBehaviour
         placementManager = GameObject.FindWithTag("BPM").GetComponent<BuildingPlacementManager>();
         Hide();
 
-        closeButton.onClick.AddListener(CloseMenu);
+        if (closeButton != null)
+        {
+            closeButton.onClick.AddListener(CloseMenu);
+        }
     }
 
     public void Show(Action onClose)
@@ -53,7 +56,10 @@ public class BuyMenu : MonoBehaviour
 
             GameObject item = Instantiate(buyMenuItemPrefab, contentPanel);
             BuyMenuItem menuItem = item.GetComponent<BuyMenuItem>();
-            menuItem.Setup(building, i);
+            if (menuItem != null)
+            {
+                menuItem.Setup(building, i);
+            }
         }
     }
 }

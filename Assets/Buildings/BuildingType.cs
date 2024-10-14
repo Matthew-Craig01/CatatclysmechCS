@@ -12,7 +12,4 @@ public class BuildingType
     public int cost;
     public string description; 
     public int powerCost;
-
-    [Header("Powers")]
-    public List<Power> powers;
 }

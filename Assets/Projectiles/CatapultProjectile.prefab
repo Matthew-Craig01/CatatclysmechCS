@@ -113,7 +113,7 @@ MonoBehaviour:
   rotationSpeed: 50
   liveFor: 30
   overWalls: 1
-  explosion: {fileID: 0}
+  explosion: {fileID: -3510363473503048955, guid: c94379fbadb309c6590619b378409915, type: 3}
 --- !u!212 &-7338633735970970154
 SpriteRenderer:
   m_ObjectHideFlags: 0

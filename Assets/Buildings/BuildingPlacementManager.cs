@@ -7,16 +7,12 @@ using TMPro; // Needed if you implement UI messages
 
 public class BuildingPlacementManager : MonoBehaviour
 {
-    public Power powerSystem;
 
-    [Header("Building Types")]
     public List<BuildingType> buildingTypes;
 
     [Header("UI References")]
     public BuyMenu buyMenu;
     public InventoryHUD inventoryHUD;
-    public Text placementMessageText;
-    public Text buildingDescriptionDisplay;
 
     [Header("Placement Settings")]
     public GameObject placementIndicatorPrefab;
@@ -33,6 +29,8 @@ public class BuildingPlacementManager : MonoBehaviour
 
     public Vector2 indicatorSize = new Vector2(1f, 1f);
 
+    [Header("Power System")]
+    public Power powerSystem;
 
     void Awake()
     {
@@ -57,10 +55,6 @@ public class BuildingPlacementManager : MonoBehaviour
     {
         inventoryHUD.UpdateInventory(inventory);
         inventoryHUD.HighlightBuilding(selectedBuildingIndex);
-
-        buildingDescriptionDisplay.text = buildingTypes[selectedBuildingIndex].description;
-        buildingDescriptionDisplay.enabled = true;
-        Debug.Log("Displayed initial building description.");
     }
 
     void Update()
@@ -88,8 +82,11 @@ public class BuildingPlacementManager : MonoBehaviour
 
         bool purchaseSuccessful = powerSystem.Spend(buildingCost);
 
-        inventory[buildingIndex] += 1;
-        inventoryHUD.UpdateInventory(inventory);
+        if (purchaseSuccessful)
+        {
+            inventory[buildingIndex] += 1;
+            inventoryHUD.UpdateInventory(inventory);
+        }
     }
 
     public void EnterPlacementMode()
@@ -107,12 +104,6 @@ public class BuildingPlacementManager : MonoBehaviour
             UpdatePlacementIndicator();
 
             inventoryHUD.HighlightBuilding(selectedBuildingIndex);
-
-            if (buildingDescriptionDisplay != null)
-            {
-                buildingDescriptionDisplay.text = buildingTypes[selectedBuildingIndex].description;
-                buildingDescriptionDisplay.enabled = true;
-            }
         }
         else
         {
@@ -127,18 +118,9 @@ public class BuildingPlacementManager : MonoBehaviour
         {
             Destroy(placementIndicatorInstance);
             placementIndicatorInstance = null;
-            Debug.Log("Destroyed Placement Indicator and exited Placement Mode.");
         }
 
         inventoryHUD.ClearHighlight();
-
-        if (buildingDescriptionDisplay != null)
-        {
-            buildingDescriptionDisplay.enabled = false;
-            Debug.Log("Hidden building description.");
-        }
-
-        Debug.Log("Exited Placement Mode.");
     }
 
     private void HandlePlacement()
@@ -149,7 +131,10 @@ public class BuildingPlacementManager : MonoBehaviour
         Vector2Int snappedCell = buildingCells.FromGlobalPosition(mouseWorldPos);
         Vector2 snappedPosition = buildingCells.ToGlobalPosition(snappedCell);
 
-        placementIndicatorInstance.transform.position = snappedPosition;
+        if (placementIndicatorInstance != null)
+        {
+            placementIndicatorInstance.transform.position = snappedPosition;
+        }
 
         bool hasInventory = inventory[selectedBuildingIndex] > 0;
 
@@ -162,14 +147,9 @@ public class BuildingPlacementManager : MonoBehaviour
         else
         {
             if (!buildingCells.IsValid(snappedCell))
-            {
                 indicatorSpriteRenderer.color = Color.red;
-            }
             else
-            {
                 indicatorSpriteRenderer.color = Color.gray;
-            }
-
         }
 
         if (Input.GetMouseButtonDown(0) && isValid)
@@ -179,9 +159,7 @@ public class BuildingPlacementManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            Debug.Log("Right-click detected. Exiting placement mode.");
             ExitPlacementMode();
-            ShowPlacementMessage("Exited placement mode.");
         }
 
         if (Input.mouseScrollDelta.y != 0)
@@ -211,10 +189,6 @@ public class BuildingPlacementManager : MonoBehaviour
 
             buildingCells.Add(cell, placedBuilding);
         }
-        else
-        {
-            ShowPlacementMessage($"No {building.buildingName} left to place!");
-        }
     }
 
     private bool CheckPlacementValidity(Vector3 position)
@@ -238,12 +212,6 @@ public class BuildingPlacementManager : MonoBehaviour
         UpdatePlacementIndicator();
 
         inventoryHUD.HighlightBuilding(selectedBuildingIndex);
-
-        if (buildingDescriptionDisplay != null)
-        {
-            buildingDescriptionDisplay.text = buildingTypes[selectedBuildingIndex].description;
-        }
-
     }
 
     public void SelectBuilding(int index)
@@ -254,22 +222,27 @@ public class BuildingPlacementManager : MonoBehaviour
 
     private void UpdatePlacementIndicator()
     {
-        SpriteRenderer spriteRenderer = placementIndicatorInstance.GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = buildingTypes[selectedBuildingIndex].placementIndicator;
+        if (placementIndicatorInstance != null)
+        {
+            SpriteRenderer spriteRenderer = placementIndicatorInstance.GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.sprite = buildingTypes[selectedBuildingIndex].placementIndicator;
 
-        placementIndicatorInstance.transform.localScale = new Vector3(indicatorSize.x, indicatorSize.y, 1f);
+                placementIndicatorInstance.transform.localScale = new Vector3(indicatorSize.x, indicatorSize.y, 1f);
 
-        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPos.z = 0f;
-        Vector2Int snappedCell = buildingCells.FromGlobalPosition(mouseWorldPos);
-        Vector2 snappedPosition = buildingCells.ToGlobalPosition(snappedCell);
-        placementIndicatorInstance.transform.position = snappedPosition;
+                Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mouseWorldPos.z = 0f;
+                Vector2Int snappedCell = buildingCells.FromGlobalPosition(mouseWorldPos);
+                Vector2 snappedPosition = buildingCells.ToGlobalPosition(snappedCell);
+                placementIndicatorInstance.transform.position = snappedPosition;
+            }
+        }
     }
 
     public void OpenBuyMenu(Action onClosed)
     {
         buyMenu.Show(onClosed);
-        Debug.Log("OpenBuyMenu called with callback.");
     }
 
     public void CloseBuyMenu()
@@ -287,16 +260,4 @@ public class BuildingPlacementManager : MonoBehaviour
         return isPlacing;
     }
 
-    private void ShowPlacementMessage(string message)
-    {
-        placementMessageText.text = message;
-        placementMessageText.enabled = true;
-        CancelInvoke("HidePlacementMessage");
-        Invoke("HidePlacementMessage", 2f);
-    }
-
-    private void HidePlacementMessage()
-    {
-        placementMessageText.enabled = false;
-    }
 }

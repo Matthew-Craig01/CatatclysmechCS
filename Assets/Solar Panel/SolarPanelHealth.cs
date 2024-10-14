@@ -28,12 +28,13 @@ public class SolarPanelHealth : MonoBehaviour
 
     void Update()
     {
-        if (healthBar == null)
         if (current <= 0)
         {
             Destroy(gameObject);
             buildingCells.Remove(transform.position);
             spSpawner.Die();
+            healthBar.Die();
+
         }
     }
 

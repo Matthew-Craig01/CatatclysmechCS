@@ -19,9 +19,12 @@ public class CannonTower : Building
 
     protected override void Shoot(GameObject target)
     {
-        Vector2 direction = (target.transform.position - firePoint.position).normalized;
-        projectilePattern.Init(projectilePrefab, direction);
-        audioController.PlaySFX(audioController.cannon);
-        projectilePattern.SpawnSingleProjectile();
+        if (projectilePattern != null)
+        {
+            Vector2 direction = (target.transform.position - firePoint.position).normalized;
+            projectilePattern.Init(projectilePrefab, direction);
+            audioController.PlaySFX(audioController.cannon);
+            projectilePattern.SpawnSingleProjectile();
+        }
     }
 }

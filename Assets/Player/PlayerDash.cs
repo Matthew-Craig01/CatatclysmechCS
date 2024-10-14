@@ -37,6 +37,7 @@ namespace Player
             buildings = LayerMask.GetMask("Buildings");
         }
 
+        // Update is called once per frame
         void Update()
         {
             if (dashing)
