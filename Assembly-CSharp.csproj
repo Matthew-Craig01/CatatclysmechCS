@@ -112,7 +112,6 @@
     <Compile Include="Assets/Player/Wrench.cs" />
     <Compile Include="Assets/Solar Panel/SolarPanelTracker.cs" />
     <Compile Include="Assets/Buildings/HealthBarController.cs" />
-    <Compile Include="Assets/Buildings/TeleporterGate.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_ExampleScript_01.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets/Buildings/InventoryHUD.cs" />
@@ -129,9 +128,7 @@
     <Compile Include="Assets/scripts/SoundEffectsManager.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ObjectSpin.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_PhoneNumberValidator.cs" />
-    <Compile Include="Assets/Player/SelectBuilding.cs" />
     <Compile Include="Assets/Enemies/EnemyDie.cs" />
-    <Compile Include="Assets/Buildings/TeleporterManager.cs" />
     <Compile Include="Assets/Buildings/Wall.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexJitter.cs" />
     <Compile Include="Assets/Solar Panel/SolarPanelHealth.cs" />
@@ -150,7 +147,6 @@
     <Compile Include="Assets/Enemies/EnemyAnimations.cs" />
     <Compile Include="Assets/Player/PlayerCollisions.cs" />
     <Compile Include="Assets/Buildings/BuildingCollisions.cs" />
-    <Compile Include="Assets/Buildings/CatapultTower.cs" />
     <Compile Include="Assets/Projectiles/ProjectilePattern.cs" />
     <Compile Include="Assets/Buildings/Buildings.cs" />
     <Compile Include="Assets/Enemies/EnemyType.cs" />
