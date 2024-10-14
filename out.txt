@@ -1,0 +1,79 @@
+6e03b23 Merge remote-tracking branch 'Origin/nicks'
+8d9b095 Random ache
+69a1ae6 index on (no branch): 98602b7 added new chanegs
+3f1f47d Tutorial Menu
+98602b7 added new chanegs
+d0974a5 Merge remote-tracking branch 'remotes/Origin/alexis1230'
+96d9380 Ignore this
+7c64f7f Merge remote-tracking branch 'Origin/alexis1230'
+8aa9975 ready to publish
+564bf59 Cursor hotspot
+18ccb8e ready for matt
+4fdffc3 Deleted unused stuff
+46ce9af Catapult
+fe62f17 added my stuff
+31e9514 Fixed bug with solar panel health
+64458ac Building Collisions
+b2e40b5 CANNONS
+5f07023 Added proper rendering to walls
+910f667 Merge remote-tracking branch 'Origin/5pmalexis'
+d150d00 changes  for next merge with matt
+22b0710 Started Work on Tower
+e046bb1 Backed Up Scene to Scene Prefabs
+1c68458 Solar Panel Tracker color reflects HP
+200af17 fixup! fixup! Healthbars reworked + integrated with wrench
+5497831 fixup! Healthbars reworked + integrated with wrench
+846a81a Healthbars reworked + integrated with wrench
+e8c3e6a Integrated alexis into it
+e01c96b Added Gizmos to Grids + Fixed Solar panel bug
+75a9d8d Optimised and Improved Grid System
+27bc840 Grid System
+4381b93 Grid System
+6bb0e08 Improved Dash
+9d1778f Fixed bug with wrenches
+feb1a80 Added Bear
+1ab7014 Changed Cursor
+ed070a0 Reworked Power System
+7486ba4 UI Fixes
+283e79d Implemented Rat + More Fixes
+b1f0aec Changed Bear behaviour to avoid Rat overlap
+faaa5f0 Fixed Immunity
+ab4ccfc fixup! Added Bear Enemy Type. Improved Round Scaling
+31a8a27 Added Bear Enemy Type. Improved Round Scaling
+6b3d1b7 Solar Panel Trackers shake when hit + bugfix
+3ec73e7 Solar Panel Tracker
+e8b5ba3 Fixed Bug with World Border
+7067d1c Fixed screen shake bug
+a6e648c Fixed Major Bug in round system
+1850baf working, without grid placement rn
+9eba5c6 Fixed Enemy pathfinding -> walk around buildings
+e1d15ac Added Screen Shake to Wrench
+f71d5a3 First Solar Panel near center
+2adfb9e Screen Shake
+c6649bb Player Health, basic UI, iframes
+ca8ea6d mergey eergy merge
+e99a5c5 mergy merge
+48750c7 merge
+7f0bb5b buildings excl. teleporter, buy menu, invetory, placement, buggy health bars
+9cf475f Minor change
+0d028da Buy Changes
+2f1e1d3 Round System Implemented. Might have bugs
+853817f Added Reload Delay to Wrenches
+145729f Fixed same bug with wrench trail
+5bae0ac Fixed Bug in particle System
+153419f Solar Panel Health
+a52cbe8 Optimised Start up time
+16d775f Improved Lighting
+e73ae4f Improved EnemySpawner and Camera system
+f2514b6 Grass Grid System + Player border bounce
+3791a01 Removed superfluous 'x' Scene
+267b8ec Solar Panel, Projectiles, Camera, Shader changes
+3991c85 Fixed Animation Bug
+1200bb6 Improved Particles + Balance
+96ce0de fixup! Particle System
+940e73d Particle System
+53d3e7c Fixed "floating frog" bug
+394d8bd Increased camera size
+ea3424a Added Outlines to enemy sprites
+195f036 Made MainScene default scene
+e8018ac New Repo

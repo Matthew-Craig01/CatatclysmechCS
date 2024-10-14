@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Wrench
+  - Enemy
+  - Projectile
+  - EnemyParticles
+  - DashFlash
+  - Dash Trail
+  - DashTrail
+  - Wrench Trail
+  - Explode
+  - Building
+  - Round Controller
+  - Enemy Spawner
+  - SolarPanel
+  - Grid
+  - UI
+  - BuildingProjectile
+  - TeleporterGate
+  - Wall
+  - Audio
+  - BuyMenu
+  - BPM
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Buildings
+  - Player
+  - Projectiles
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Water
+    uniqueID: 1006447465
+    locked: 0
+  - name: RuleGrass
+    uniqueID: 1758614159
+    locked: 0
+  - name: PlainGrass
+    uniqueID: 48327093
+    locked: 0
+  - name: Trail
+    uniqueID: 4012644067
+    locked: 0
+  - name: Enemies
+    uniqueID: 3917873469
+    locked: 0
+  - name: Player
+    uniqueID: 7533329
+    locked: 0
+  - name: Projectiles
+    uniqueID: 3793811811
+    locked: 0
+  - name: Buildings
+    uniqueID: 3486198527
+    locked: 0
+  - name: Buildings Head
+    uniqueID: 1891215329
+    locked: 0
+  - name: Building Projectiles
+    uniqueID: 1774146885
+    locked: 0
+  - name: Particles
+    uniqueID: 3501151023
+    locked: 0
+  - name: Wrench
+    uniqueID: 3489177627
+    locked: 0
+  - name: Tracker
+    uniqueID: 1679984971
+    locked: 0
+  - name: UI
+    uniqueID: 40284691
+    locked: 0

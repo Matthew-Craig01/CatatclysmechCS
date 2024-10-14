@@ -1,0 +1,10 @@
+/Logs/
+/Library/
+/Temp/
+/UserSettings/
+/.vscode/
+/.cache/
+/Build/
+/Builds/
+/MemoryCaptures/
+/Assets/Plugins/Editor/JetBrains*

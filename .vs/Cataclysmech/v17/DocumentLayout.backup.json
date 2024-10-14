@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\GitHub\\Cataclysmech\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2B0A82BF-999A-9934-9BBD-BB9F2D5A278B}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\cataclysmech\\assets\\buildings\\buildingcollisions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B0A82BF-999A-9934-9BBD-BB9F2D5A278B}|Assembly-CSharp.csproj|solutionrelative:assets\\buildings\\buildingcollisions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BuildingCollisions.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\Cataclysmech\\Assets\\Buildings\\BuildingCollisions.cs",
+              "RelativeDocumentMoniker": "Assets\\Buildings\\BuildingCollisions.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\Cataclysmech\\Assets\\Buildings\\BuildingCollisions.cs",
+              "RelativeToolTip": "Assets\\Buildings\\BuildingCollisions.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T22:05:15.189Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
